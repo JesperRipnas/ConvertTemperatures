@@ -10,48 +10,51 @@ namespace ConvertTemperatures
                 //Menu
                 MainMenu();
 
-                //Input
-                double converted;
-                Console.Write("\nSelect an option: ");
-                int userInput = Convert.ToInt32(Console.ReadLine());
-                // If user picks option 7, the program ends
-                if (userInput == 7)
+                while (true)
                 {
-                    Console.WriteLine("Goodbye!");
-                    Environment.Exit(0);
-                }
-                // Switch to check what option and method user wants to use
-                Console.Write("\nEnter value to convert: ");
-                double value = Convert.ToDouble(Console.ReadLine());
-                switch (userInput)
-                {
-                    case 1:
-                        converted = CelciusToFahrenheit(value);
-                        Console.WriteLine($"{value}°C is {converted}°F");
-                        break;
-                    case 2:
-                        converted = FahrenheitToCelcius(value);
-                        Console.WriteLine($"{value}°F is {converted}°C");
-                        break;
-                    case 3:
-                        converted = CelciusToKelvin(value);
-                        Console.WriteLine($"{value}°C is {converted.ToString("F2")}K");
-                        break;
-                    case 4:
-                        converted = FahrenheitToKelvin(value);
-                        Console.WriteLine($"{value}°F is {converted.ToString("F2")}K");
-                        break;
-                    case 5:
-                        converted = KelvinToCelcius(value);
-                        Console.WriteLine($"{value}K is {converted.ToString("F2")}°C");
-                        break;
-                    case 6:
-                        converted = KelvinToFahrenheit(value);
-                        Console.WriteLine($"{value}K is {converted.ToString("F2")}°F");
-                        break;
+                    //Input
+                    double converted;
+                    Console.Write("\nSelect an option: ");
+                    int userInput = Convert.ToInt32(Console.ReadLine());
+                    // If user picks option 7, the program ends
+                    if (userInput == 7)
+                    {
+                        Console.WriteLine("Goodbye!");
+                        Environment.Exit(0);
+                    }
+                    // Switch to check what option and method user wants to use
+                    Console.Write("\nEnter value to convert: ");
+                    double value = Convert.ToDouble(Console.ReadLine());
+                    switch (userInput)
+                    {
+                        case 1:
+                            converted = CelciusToFahrenheit(value);
+                            Console.WriteLine($"{value}°C is {converted}°F");
+                            break;
+                        case 2:
+                            converted = FahrenheitToCelcius(value);
+                            Console.WriteLine($"{value}°F is {converted}°C");
+                            break;
+                        case 3:
+                            converted = CelciusToKelvin(value);
+                            Console.WriteLine($"{value}°C is {converted.ToString("F2")}K");
+                            break;
+                        case 4:
+                            converted = FahrenheitToKelvin(value);
+                            Console.WriteLine($"{value}°F is {converted.ToString("F2")}K");
+                            break;
+                        case 5:
+                            converted = KelvinToCelcius(value);
+                            Console.WriteLine($"{value}K is {converted.ToString("F2")}°C");
+                            break;
+                        case 6:
+                            converted = KelvinToFahrenheit(value);
+                            Console.WriteLine($"{value}K is {converted.ToString("F2")}°F");
+                            break;
+                    }
+                    Console.ReadKey();
                 }
             }
-
             // Menu method
             static void MainMenu()
             {
